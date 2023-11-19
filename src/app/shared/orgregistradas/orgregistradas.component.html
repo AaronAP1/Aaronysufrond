@@ -1,0 +1,46 @@
+<app-navbarprin></app-navbarprin>
+<main>
+    <div class="header pb-7 pt-5 pt-lg-8 d-flex align-items-center"
+        style="min-height: 350px; background-image: url(https://media.discordapp.net/attachments/1042520483419148311/1042532490784538785/Grupo_48.png?width=960&height=343); background-size: cover; background-position: center top;">
+
+        <div class="container">
+            <div class="text-center text-light">
+                <h1>Organizaciones</h1>
+
+                <div class="position-relative text-light">
+                    <div class="d-flex position-absolute top-50 start-50 translate-middle mt-4">
+                        <a [routerLink]="['']" class="text-light text-decoration-none">Inicio</a>
+                        <h6 class="mx-2">></h6>
+                        <span>Organizaciones Registradas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <mat-form-field appearance="standard">
+            <mat-label>Busqueda Por Nombre</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Organizacion Social" #input>
+        </mat-form-field>
+
+
+
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Direccion</th>
+          <th>Tipo</th>
+        </tr>
+        <tr *ngFor="let item of data">
+          <td>{{ item.id }}</td>
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.apellido }}</td>
+          <td>{{ item.telefono }}</td>
+        </tr>
+
+      </table>
+    </div>
+
+</main>
